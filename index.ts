@@ -9,6 +9,14 @@ class clientCloseDate {
     protected index: number;
     protected columnNumbers: Object;
 
+    static new(id, sheetName, titleRow) {
+        let returnClass = new clientCloseDate();
+        returnClass.openFileByID(id);
+        returnClass.sheetName = sheetName;
+        returnClass.titleRow = titleRow;
+        return returnClass;
+    }
+
     public openFileByID(id: string) {
         try {
             this._spreadsheet = SpreadsheetApp.openById(id);  // https://developers.google.com/drive/v3/web/picker  
@@ -52,7 +60,7 @@ class clientCloseDate {
             }
         }
 
-        throw "Column \"{columnTitle}\" not found on row {this._titleRow}.";
+        throw "Column \"{columnTitle}\" not found on row " + (this._titleRow + 1) + ".";
     }
 
     public next() {
@@ -73,10 +81,5 @@ class clientCloseDate {
 
     public getValue(columnTitle: string) {
         return this._dataArray[this.index][this.getColumnNumberByText(columnTitle)];
-    }
-
-    checkValidDate(date: string): boolean {
-        var checkDate = new Date(date);
-        return (checkDate instanceof Date && !isNaN(checkDate.valueOf()));
     }
 }
