@@ -1,0 +1,27 @@
+{
+  "name": "@bruno-fontes/gas_getsheetdata",
+  "version": "1.0.5",
+  "description": "My utility to get data from GAS SpreadSheet",
+  "main": "GAS_GetSheetData.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "GAS",
+    "sheet"
+  ],
+  "author": "Bruno Fontes",
+  "license": "ISC",
+  "dependencies": {
+    "@types/google-apps-script": "0.0.37"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunofontes/gas_getSheetData.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brunofontes/gas_getSheetData/issues"
+  },
+  "homepage": "https://github.com/brunofontes/gas_getSheetData#readme"
+}

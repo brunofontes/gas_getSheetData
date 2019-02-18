@@ -1,5 +1,5 @@
 //@ts-check
-class clientCloseDate {
+class getSheetData {
     protected _titleRow: number =1;
     protected _dataArray: Array<any>;
 
@@ -81,5 +81,9 @@ class clientCloseDate {
 
     public getValue(columnTitle: string) {
         return this._dataArray[this.index][this.getColumnNumberByText(columnTitle)];
+    }
+
+    [Symbol.iterator]() {
+        return { next: this.next() };
     }
 }
